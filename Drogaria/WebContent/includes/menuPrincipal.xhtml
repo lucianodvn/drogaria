@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<h:outputStylesheet library="css" name="estilos.css" />
+	</h:head>
+
+	<h:form>
+
+		<p:menubar>
+
+			<p:menuitem value="Menu Inicial"
+				url="http://localhost:8080/Drogaria/faces/pages/principal.xhtml" icon="ui-icon-home" />
+
+			<p:menuitem icon="ui-icon-person" value="Funcionários" outcome="/pages/funcionario.xhtml" />
+			
+			<p:menuitem value="Fabricantes" outcome="/pages/fabricante.xhtml" icon="ui-icon-bookmark"/>
+
+			<p:menuitem value="Produtos" outcome="/pages/Produto.xhtml" icon="ui-icon-bookmark" />
+
+			<p:menuitem value="Sair" icon="ui-icon-close"
+				oncomplete="PF('dlgSair').show();" update=":frmSair:pnlSair">
+			</p:menuitem>
+
+		</p:menubar>
+
+	</h:form>
+
+	<p:dialog widgetVar="dlgSair" closable="false" draggable="false"
+		resizable="false" modal="true" appendTo="@(body)"
+		header="Sair do Sistema">
+
+		<h:form id="frmSair">
+			<h:panelGrid id="pnlSair" columns="2">
+				<h:outputLabel value="Deseja realmente sair ?" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<h:commandButton value="Sim"
+					actionListener="#{buttonView.buttonAction}">
+				</h:commandButton>
+
+				<h:commandButton value="Cancelar" process="@this"
+					onclick="PF('dlgSair').hide();">
+				</h:commandButton>
+			</h:panelGrid>
+
+		</h:form>
+	</p:dialog>
+
+
+</ui:composition>

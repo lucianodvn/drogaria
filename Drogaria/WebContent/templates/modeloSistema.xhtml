@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Drogaria</title>
+	<h:outputStylesheet library="css" name="estilos.css" />
+	<h:outputScript library="js" name="scripts.js" />
+</h:head>
+<h:body>
+
+	<p:growl id="msgGlobal" life="5000" />
+
+	<p:layout fullpage="true">
+		<p:layoutUnit position="north">
+			<p:graphicImage name="img/drogaria.png"
+				style="width:100px; height:20px;" />
+
+			<ui:insert name="menu" />
+		</p:layoutUnit>
+
+
+		<p:layoutUnit position="center">
+			<ui:insert name="conteudo" />
+			<p:graphicImage name="img/Copyright.png"
+				style="width:10px; height:10px;" />
+			<h:outputText value=" Copyright Luciano Del Vecchio Neves" />
+		</p:layoutUnit>
+		
+		<br/>
+		<br/>
+		<p:layoutUnit position="south" >
+		<ui:insert name="rodape" />
+		</p:layoutUnit>
+
+
+	</p:layout>
+</h:body>
+</html>

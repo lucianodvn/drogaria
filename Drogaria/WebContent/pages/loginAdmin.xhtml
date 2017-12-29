@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<h:outputStylesheet library="css" name="login.css" />
+</h:head>
+
+
+<h:form id="centro">
+	<p:graphicImage name="img/drogaria.png"
+		style="width:100px; height:20px;" />
+	<center>
+		<h1>Bem Vindo ao Sistema Drogaria</h1>
+	</center>
+	<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+	<h:panelGrid columns="2" cellpadding="5">
+		<h:outputLabel for="username" value="Login:" />
+		<p:inputText id="username" value="#{validarLogin.username}"
+			required="true" label="username"
+			requiredMessage="O campo Login é Obrigatório!" />
+
+		<h:outputLabel for="password" value="Senha:" />
+		<p:password id="password" value="#{validarLogin.password}"
+			required="true" label="password"
+			requiredMessage="O campo Senha é Obrigatório!" />
+
+		<f:facet name="footer">
+			<p:commandButton icon="ui-icon-locked" value="Login" update="growl"
+				actionListener="#{validarLogin.login}" />
+		</f:facet>
+	</h:panelGrid>
+
+
+</h:form>
+</html>
